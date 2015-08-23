@@ -1,0 +1,72 @@
+---
+title       : Calculate Annualized Investment Return
+subtitle    : 
+author      : Aric Rosenbaum
+job         : 
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : [mathjax]     # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+---
+
+## Introduction
+
+This R-based application will calculate the annualized return of an investment given:
+
+1. Cost of investment (sometimes refered to as "basis")
+
+2. Current value of the investment
+
+3. Number of months the investment has been held
+
+--- .class #id 
+
+## Example #1
+
+For example:
+
+1. Cost of investment = $10,000
+
+2. Current value of the investment = $14,000
+
+3. Number of months the investment has been held = 30
+
+Then, the annualized investment return is `r round(((14000 / 10000) ^ ( 1 / (30/12)) - 1) * 100, 2)`%.
+
+--- .class #id 
+
+## Example #2
+
+For example:
+
+1. Cost of investment = $10,000
+
+2. Current value of the investment = $14,000
+
+3. Number of months the investment has been held = 360
+
+Then, the annualized investment return is `r round(((14000 / 10000) ^ ( 1 / (360/12)) - 1) * 100, 2)`%.
+
+--- .class #id 
+
+## Formula
+
+Given:
+
+* Cost of investment (c)
+
+* Current value of investment (v)
+
+* Number of years the investment has been held (y)
+
+The formula to calculate an annualized return is:
+
+$$ \left(\frac{v}{c} \right) ^ \frac{1}{y} - 1$$
+
+If you measure your holding period in months, you need to divide the number of months by 12 to get the number of years:
+
+$$y = \frac{m}{12}$$
+
+
